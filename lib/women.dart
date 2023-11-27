@@ -93,12 +93,12 @@ class _WomenScreenState extends State<WomenScreen> {
                   children: [
                     Row(
                       children: [
-                        UiHelper().CustomCategoryShow("Tshirt", "500", "4.5", () {
+                        UiHelper().CustomCategoryShow("Dress", "500", "4.5", () {
                           Navigator.push(context, MaterialPageRoute(builder: (context)=>ItemScreen(data: "assets/images/women.jpg",)));
                         }, "assets/images/women.jpg"),
                         SizedBox(width: 10,),
 
-                        UiHelper().CustomCategoryShow("Tshirt", "500", "4.5", () {
+                        UiHelper().CustomCategoryShow("Dress", "500", "4.5", () {
                           Navigator.push(context, MaterialPageRoute(builder: (context)=>ItemScreen(data: "assets/images/wo2.jpg",)));
                         }, "assets/images/wo2.jpg"),
 
@@ -107,12 +107,12 @@ class _WomenScreenState extends State<WomenScreen> {
                     SizedBox(height: 10,),
                     Row(
                       children: [
-                        UiHelper().CustomCategoryShow("Tshirt", "500", "4.5", () {
+                        UiHelper().CustomCategoryShow("Dress", "500", "4.5", () {
                           Navigator.push(context, MaterialPageRoute(builder: (context)=>ItemScreen(data: "assets/images/wo3.jpg",)));
                         }, "assets/images/wo3.jpg"),
                         SizedBox(width: 10,),
 
-                        UiHelper().CustomCategoryShow("Tshirt", "500", "4.5", () {
+                        UiHelper().CustomCategoryShow("Dress", "500", "4.5", () {
                           Navigator.push(context, MaterialPageRoute(builder: (context)=>ItemScreen(data: "assets/images/wo4.jpg",)));
                         }, "assets/images/wo4.jpg"),
 
@@ -122,12 +122,12 @@ class _WomenScreenState extends State<WomenScreen> {
 
                     Row(
                       children: [
-                        UiHelper().CustomCategoryShow("Tshirt", "500", "4.5", () {
+                        UiHelper().CustomCategoryShow("Dress", "500", "4.5", () {
                           Navigator.push(context, MaterialPageRoute(builder: (context)=>ItemScreen(data: "assets/images/wo5.jpg",)));
                         }, "assets/images/wo5.jpg"),
                         SizedBox(width: 10,),
 
-                        UiHelper().CustomCategoryShow("Tshirt", "500", "4.5", () {
+                        UiHelper().CustomCategoryShow("Dress", "500", "4.5", () {
                           Navigator.push(context, MaterialPageRoute(builder: (context)=>ItemScreen(data: "assets/images/wo1.jpg",)));
                         }, "assets/images/wo1.jpg"),
 

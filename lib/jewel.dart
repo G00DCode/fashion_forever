@@ -93,12 +93,12 @@ class _JewelScreenState extends State<JewelScreen> {
                   children: [
                     Row(
                       children: [
-                        UiHelper().CustomCategoryShow("Tshirt", "500", "4.5", () {
+                        UiHelper().CustomCategoryShow("Necklace", "500", "4.5", () {
                           Navigator.push(context, MaterialPageRoute(builder: (context)=>ItemScreen(data: "assets/images/jew1.jpg",)));
                         }, "assets/images/jew1.jpg"),
                         SizedBox(width: 10,),
 
-                        UiHelper().CustomCategoryShow("Tshirt", "500", "4.5", () {
+                        UiHelper().CustomCategoryShow("Necklace", "500", "4.5", () {
                           Navigator.push(context, MaterialPageRoute(builder: (context)=>ItemScreen(data: "assets/images/jew2.jpg",)));
                         }, "assets/images/jew2.jpg"),
 
@@ -107,12 +107,12 @@ class _JewelScreenState extends State<JewelScreen> {
                     SizedBox(height: 10,),
                     Row(
                       children: [
-                        UiHelper().CustomCategoryShow("Tshirt", "500", "4.5", () {
+                        UiHelper().CustomCategoryShow("Necklace", "500", "4.5", () {
                           Navigator.push(context, MaterialPageRoute(builder: (context)=>ItemScreen(data: "assets/images/jew3.jpg",)));
                         }, "assets/images/jew3.jpg"),
                         SizedBox(width: 10,),
 
-                        UiHelper().CustomCategoryShow("Tshirt", "500", "4.5", () {
+                        UiHelper().CustomCategoryShow("Necklace", "500", "4.5", () {
                           Navigator.push(context, MaterialPageRoute(builder: (context)=>ItemScreen(data: "assets/images/jew4.jpg",)));
                         }, "assets/images/jew4.jpg"),
 
@@ -122,12 +122,12 @@ class _JewelScreenState extends State<JewelScreen> {
 
                     Row(
                       children: [
-                        UiHelper().CustomCategoryShow("Tshirt", "500", "4.5", () {
+                        UiHelper().CustomCategoryShow("Necklace", "500", "4.5", () {
                           Navigator.push(context, MaterialPageRoute(builder: (context)=>ItemScreen(data: "assets/images/jew5.jpg",)));
                         }, "assets/images/jew5.jpg"),
                         SizedBox(width: 10,),
 
-                        UiHelper().CustomCategoryShow("Tshirt", "500", "4.5", () {
+                        UiHelper().CustomCategoryShow("Necklace", "500", "4.5", () {
                           Navigator.push(context, MaterialPageRoute(builder: (context)=>ItemScreen(data: "assets/images/jew6.jpg",)));
                         }, "assets/images/jew6.jpg"),
 

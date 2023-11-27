@@ -213,13 +213,13 @@ class UiHelper{
                         ),
                         Padding(
                           padding: const EdgeInsets.all(8.0),
-                          child: Text("Women Print Kurta(Black)", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),),
+                          child: Text("Item", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),),
                         ),
                         Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Row(
                             children: [
-                              Text("Rs.149 ",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),
+                              Text("Rs.500 ",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),
                               Text("per item"),
                             ],
                           ),
