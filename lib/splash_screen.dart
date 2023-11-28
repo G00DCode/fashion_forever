@@ -1,13 +1,50 @@
+import 'dart:async';
+
+import 'package:fashion_forever/home.dart';
+import 'package:fashion_forever/login_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class SplassScreen extends StatefulWidget{
   @override
-  State<SplassScreen> createState() => _SplassScreenState();
+  State<SplassScreen> createState() => SplassScreenState();
 }
 
-class _SplassScreenState extends State<SplassScreen> {
+class SplassScreenState extends State<SplassScreen> {
+  static const  String KEYLOGIN="login";
+  @override
+  void initState() {
+    super.initState();
+    whereToGo();
+  }
+
+    void whereToGo()async{
+      var sharedPref =  await SharedPreferences.getInstance();
+      var isLoggedIn =sharedPref.getBool(KEYLOGIN);
+
+
+      Timer(Duration(seconds:5 ),(){
+
+        if(isLoggedIn!=null){
+          print(isLoggedIn);
+          if(isLoggedIn){
+            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>HomeScreen()));
+          }
+          else{
+            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>LoginPage()));
+          }
+
+        }
+        else{
+          Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>LoginPage()));
+        }
+
+      });
+    }
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

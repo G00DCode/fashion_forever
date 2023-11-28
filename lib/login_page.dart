@@ -1,6 +1,8 @@
-import 'package:fashion_forever/ui_helper.dart';
+import 'package:fashion_forever/home.dart';
+import 'package:fashion_forever/splash_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class LoginPage extends StatefulWidget{
   @override
@@ -25,7 +27,7 @@ class _LoginPageState extends State<LoginPage> {
           ),
           child: Padding(
             padding: const EdgeInsets.only(top: 60.0, left:22),
-            child: Text("Hello\nSign in!",style: TextStyle(
+            child: Text("Hello, Sign in!",style: TextStyle(
               fontSize: 30,
               color: Colors.white,
               fontWeight: FontWeight.bold,
@@ -34,10 +36,10 @@ class _LoginPageState extends State<LoginPage> {
           ),
         ),
           Padding(
-              padding: const EdgeInsets.only(top: 200.0),
+              padding: const EdgeInsets.only(top: 120.0),
               child: Container(
-                height: double.infinity,
-                width: double.infinity,
+                height: MediaQuery.of(context).size.height,
+                width: MediaQuery.of(context).size.width,
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.only(
@@ -54,16 +56,18 @@ class _LoginPageState extends State<LoginPage> {
                       TextField(
                         decoration: InputDecoration(
                             suffixIcon: Icon(Icons.check, color: Colors.grey,),
-                            label: Text("Gmail", style: TextStyle(
+                            label: Text("Email", style: TextStyle(
                               fontWeight: FontWeight.bold,
                               color: Colors.pink.shade300,
                             ),)
                         ),
                       ),
                       TextField(
+                        obscureText: true,
                         decoration: InputDecoration(
                             suffixIcon: Icon(Icons.visibility_off, color: Colors.grey,),
                             label: Text("Password", style: TextStyle(
+
                               fontWeight: FontWeight.bold,
                               color: Colors.pink.shade300,
                             ),)
@@ -81,23 +85,31 @@ class _LoginPageState extends State<LoginPage> {
                           )
                       ),
                       SizedBox(height: 50,),
-                      Container(
-                        height: 55,
-                        width: 300,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(30),
-                          gradient: LinearGradient(
-                              colors: [
-                                Colors.pink.shade300,
-                                Colors.purple,
-                              ]
+                      InkWell(
+                        child: Container(
+                          height: 55,
+                          width: 300,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(30),
+                            gradient: LinearGradient(
+                                colors: [
+                                  Colors.pink.shade300,
+                                  Colors.purple,
+                                ]
+                            ),
                           ),
+                          child: Center(child: Text("SIGN IN", style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20,
+                              color: Colors.white
+                          ),),),
                         ),
-                        child: Center(child: Text("SIGN IN", style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 20,
-                            color: Colors.white
-                        ),),),
+                        onTap: ()async{
+                          var sharedPref =await SharedPreferences.getInstance();
+                          sharedPref.setBool(SplassScreenState.KEYLOGIN, true);
+
+                          Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>HomeScreen()));
+                        },
                       ),
                       SizedBox(
                         height: 50,

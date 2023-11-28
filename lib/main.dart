@@ -1,5 +1,3 @@
-import 'package:fashion_forever/Categories.dart';
-import 'package:fashion_forever/home.dart';
 import 'package:fashion_forever/splash_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -14,7 +12,7 @@ class FashionForever extends StatelessWidget{
     return MaterialApp(theme: ThemeData(
         primarySwatch: Colors.purple,
     ),
-      home: HomeScreen(),
+      home: SplassScreen(),
       title: "Fashion Forever",
       debugShowCheckedModeBanner: false,
     );
