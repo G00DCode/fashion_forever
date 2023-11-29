@@ -1,10 +1,10 @@
-import 'package:fashion_forever/ui_helper.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 
 import 'item_show.dart';
 class HomeScreen2 extends StatelessWidget{
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -49,47 +49,311 @@ class HomeScreen2 extends StatelessWidget{
               padding: const EdgeInsets.all(8.0),
               child: Text("SPONSORED PRODUCTS",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),
             ),
+            SizedBox(height: 10,),
             Container(
-              height: 220,
+              height: 200,
               width: double.infinity,
               child: SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
-                child: Row(
-                  children: [
-                    Padding(padding:const EdgeInsets.only(right:8),
-                    child:UiHelper().CustomSponsoredShow("Dress", "500", "4.5", () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=>ItemScreen(data: "assets/images/wo3.jpg",)));
-                    }, "assets/images/wo3.jpg"),),
-                    Padding(padding:const EdgeInsets.only(right:8),
-                      child:UiHelper().CustomSponsoredShow("Dress", "500", "4.5", () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context)=>ItemScreen(data: "assets/images/wo3.jpg",)));
-                      }, "assets/images/wo3.jpg"),),
-                    Padding(padding:const EdgeInsets.only(right:8),
-                      child:UiHelper().CustomSponsoredShow("Dress", "500", "4.5", () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context)=>ItemScreen(data: "assets/images/wo3.jpg",)));
-                      }, "assets/images/wo3.jpg"),),
-                    Padding(padding:const EdgeInsets.only(right:8),
-                      child:UiHelper().CustomSponsoredShow("Dress", "500", "4.5", () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context)=>ItemScreen(data: "assets/images/wo3.jpg",)));
-                      }, "assets/images/wo3.jpg"),),
-                    Padding(padding:const EdgeInsets.only(right:8),
-                      child:UiHelper().CustomSponsoredShow("Dress", "500", "4.5", () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context)=>ItemScreen(data: "assets/images/wo3.jpg",)));
-                      }, "assets/images/wo3.jpg"),),
-                    Padding(padding:const EdgeInsets.only(right:8),
-                      child:UiHelper().CustomSponsoredShow("Dress", "500", "4.5", () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context)=>ItemScreen(data: "assets/images/wo3.jpg",)));
-                      }, "assets/images/wo3.jpg"),),
-                    Padding(padding:const EdgeInsets.only(right:8),
-                      child:UiHelper().CustomSponsoredShow("Dress", "500", "4.5", () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context)=>ItemScreen(data: "assets/images/wo3.jpg",)));
-                      }, "assets/images/wo3.jpg"),),
-                    Padding(padding:const EdgeInsets.only(right:8),
-                      child:UiHelper().CustomSponsoredShow("Dress", "500", "4.5", () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context)=>ItemScreen(data: "assets/images/wo3.jpg",)));
-                      }, "assets/images/wo3.jpg"),),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                  child: Row(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(right: 10.0),
+                        child: InkWell(
+                          child: Stack(
+                            children:[ Container(
+                              height: 200,
+                              width: 150
+                              ,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(20),
+                                  image: DecorationImage(
+                                      image: AssetImage("assets/images/wo2.jpg"),
+                                    fit: BoxFit.fill,
+                                  )
+                              ),
+                            ),
+                              Positioned(
+                                height: 200,
+                                width: 150,
+                                right: 30,
+                                top: 140,
+                                child: Column(
+                                  children: [
+                                    Text("Item", style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold, ),),
+                                    Text("Rs.500",style: TextStyle(color: Colors.white,)),
+                                    Text("Rating: 4.5",style: TextStyle(color: Colors.white,)),
 
-                  ],
+                                  ],
+                                ),
+                              ),
+                          ],),
+                          onTap: (){
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=>ItemScreen(data: "assets/images/wo2.jpg")));
+                          },
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(right: 10.0),
+                        child: InkWell(
+                          child: Stack(
+                            children:[ Container(
+                              height: 200,
+                              width: 150
+                              ,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(20),
+                                  image: DecorationImage(
+                                    image: AssetImage("assets/images/men1.jpg"),
+                                    fit: BoxFit.fill,
+                                  )
+                              ),
+                            ),
+                              Positioned(
+                                height: 200,
+                                width: 150,
+                                right: 30,
+                                top: 140,
+                                child: Column(
+                                  children: [
+                                    Text("Item", style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold, ),),
+                                    Text("Rs.500",style: TextStyle(color: Colors.white,)),
+                                    Text("Rating: 4.5",style: TextStyle(color: Colors.white,)),
+
+                                  ],
+                                ),
+                              ),
+                            ],),
+                          onTap: (){
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=>ItemScreen(data: "assets/images/men1.jpg")));
+                          },
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(right: 10.0),
+                        child: InkWell(
+                          child: Stack(
+                            children:[ Container(
+                              height: 200,
+                              width: 150
+                              ,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(20),
+                                  image: DecorationImage(
+                                    image: AssetImage("assets/images/wo1.jpg"),
+                                    fit: BoxFit.fill,
+                                  )
+                              ),
+                            ),
+                              Positioned(
+                                height: 200,
+                                width: 150,
+                                right: 30,
+                                top: 140,
+                                child: Column(
+                                  children: [
+                                    Text("Item", style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold, ),),
+                                    Text("Rs.500",style: TextStyle(color: Colors.white,)),
+                                    Text("Rating: 4.5",style: TextStyle(color: Colors.white,)),
+
+                                  ],
+                                ),
+                              ),
+                            ],),
+                          onTap: (){
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=>ItemScreen(data: "assets/images/wo1.jpg")));
+                          },
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(right: 10.0),
+                        child: InkWell(
+                          child: Stack(
+                            children:[ Container(
+                              height: 200,
+                              width: 150
+                              ,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(20),
+                                  image: DecorationImage(
+                                    image: AssetImage("assets/images/kid1.jpg"),
+                                    fit: BoxFit.fill,
+                                  )
+                              ),
+                            ),
+                              Positioned(
+                                height: 200,
+                                width: 150,
+                                right: 30,
+                                top: 140,
+                                child: Column(
+                                  children: [
+                                    Text("Item", style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold, ),),
+                                    Text("Rs.500",style: TextStyle(color: Colors.white,)),
+                                    Text("Rating: 4.5",style: TextStyle(color: Colors.white,)),
+
+                                  ],
+                                ),
+                              ),
+                            ],),
+                          onTap: (){
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=>ItemScreen(data: "assets/images/kid1.jpg")));
+                          },
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(right: 10.0),
+                        child: InkWell(
+                          child: Stack(
+                            children:[ Container(
+                              height: 200,
+                              width: 150
+                              ,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(20),
+                                  image: DecorationImage(
+                                    image: AssetImage("assets/images/men5.jpg"),
+                                    fit: BoxFit.fill,
+                                  )
+                              ),
+                            ),
+                              Positioned(
+                                height: 200,
+                                width: 150,
+                                right: 30,
+                                top: 140,
+                                child: Column(
+                                  children: [
+                                    Text("Item", style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold, ),),
+                                    Text("Rs.500",style: TextStyle(color: Colors.white,)),
+                                    Text("Rating: 4.5",style: TextStyle(color: Colors.white,)),
+
+                                  ],
+                                ),
+                              ),
+                            ],),
+                          onTap: (){
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=>ItemScreen(data: "assets/images/men5.jpg")));
+                          },
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(right: 10.0),
+                        child: InkWell(
+                          child: Stack(
+                            children:[ Container(
+                              height: 200,
+                              width: 150
+                              ,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(20),
+                                  image: DecorationImage(
+                                    image: AssetImage("assets/images/wo5.jpg"),
+                                    fit: BoxFit.fill,
+                                  )
+                              ),
+                            ),
+                              Positioned(
+                                height: 200,
+                                width: 150,
+                                right: 30,
+                                top: 140,
+                                child: Column(
+                                  children: [
+                                    Text("Item", style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold, ),),
+                                    Text("Rs.500",style: TextStyle(color: Colors.white,)),
+                                    Text("Rating: 4.5",style: TextStyle(color: Colors.white,)),
+
+                                  ],
+                                ),
+                              ),
+                            ],),
+                          onTap: (){
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=>ItemScreen(data: "assets/images/wo5.jpg")));
+                          },
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(right: 10.0),
+                        child: InkWell(
+                          child: Stack(
+                            children:[ Container(
+                              height: 200,
+                              width: 150
+                              ,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(20),
+                                  image: DecorationImage(
+                                    image: AssetImage("assets/images/kid4.jpg"),
+                                    fit: BoxFit.fill,
+                                  )
+                              ),
+                            ),
+                              Positioned(
+                                height: 200,
+                                width: 150,
+                                right: 30,
+                                top: 140,
+                                child: Column(
+                                  children: [
+                                    Text("Item", style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold, ),),
+                                    Text("Rs.500",style: TextStyle(color: Colors.white,)),
+                                    Text("Rating: 4.5",style: TextStyle(color: Colors.white,)),
+
+                                  ],
+                                ),
+                              ),
+                            ],),
+                          onTap: (){
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=>ItemScreen(data: "assets/images/kid4.jpg")));
+                          },
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(right: 10.0),
+                        child: InkWell(
+                          child: Stack(
+                            children:[ Container(
+                              height: 200,
+                              width: 150
+                              ,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(20),
+                                  image: DecorationImage(
+                                    image: AssetImage("assets/images/men2.jpg"),
+                                    fit: BoxFit.fill,
+                                  )
+                              ),
+                            ),
+                              Positioned(
+                                height: 200,
+                                width: 150,
+                                right: 30,
+                                top: 140,
+                                child: Column(
+                                  children: [
+                                    Text("Item", style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold, ),),
+                                    Text("Rs.500",style: TextStyle(color: Colors.white,)),
+                                    Text("Rating: 4.5",style: TextStyle(color: Colors.white,)),
+
+                                  ],
+                                ),
+                              ),
+                            ],),
+                          onTap: (){
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=>ItemScreen(data: "assets/images/men2.jpg")));
+                          },
+                        ),
+                      ),
+
+
+
+
+
+                    ],
+                  ),
                 ),
               ),
             ),
@@ -205,188 +469,191 @@ class HomeScreen2 extends StatelessWidget{
                 height: 400,
                 width: 370,
                 child: Center(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Row(
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.all(12.0),
-                            child: Container(
-                              height: 75,
-                              width: 75,
-                              decoration: BoxDecoration(
-                                image: DecorationImage(
-                                  image: AssetImage("assets/images/biba-logo.png")
-                                )
-                              ),
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.all(12.0),
-                            child: Container(
-                              height: 75,
-                              width: 75,
-                              decoration: BoxDecoration(
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Row(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.all(12.0),
+                              child: Container(
+                                height: 75,
+                                width: 75,
+                                decoration: BoxDecoration(
                                   image: DecorationImage(
-                                      image: AssetImage("assets/images/biba-logo.png")
+                                    image: AssetImage("assets/images/allensoly.png")
                                   )
+                                ),
                               ),
                             ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.all(12.0),
-                            child: Container(
-                              height: 75,
-                              width: 75,
-                              decoration: BoxDecoration(
-                                  image: DecorationImage(
-                                      image: AssetImage("assets/images/biba-logo.png")
-                                  )
+                            Padding(
+                              padding: const EdgeInsets.all(12.0),
+                              child: Container(
+                                height: 75,
+                                width: 75,
+                                decoration: BoxDecoration(
+                                    image: DecorationImage(
+                                        image: AssetImage("assets/images/gucci.png")
+                                    )
+                                ),
                               ),
                             ),
-                          ),
-
-
-
-                        ],
-                      ),
-                      Row(
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.all(12.0),
-                            child: Container(
-                              height: 75,
-                              width: 75,
-                              decoration: BoxDecoration(
-                                  image: DecorationImage(
-                                      image: AssetImage("assets/images/biba-logo.png")
-                                  )
+                            Padding(
+                              padding: const EdgeInsets.all(12.0),
+                              child: Container(
+                                height: 75,
+                                width: 75,
+                                decoration: BoxDecoration(
+                                    image: DecorationImage(
+                                        image: AssetImage("assets/images/calvin.png")
+                                    )
+                                ),
                               ),
                             ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.all(12.0),
-                            child: Container(
-                              height: 75,
-                              width: 75,
-                              decoration: BoxDecoration(
-                                  image: DecorationImage(
-                                      image: AssetImage("assets/images/biba-logo.png")
-                                  )
+
+
+
+                          ],
+                        ),
+                        Row(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.all(12.0),
+                              child: Container(
+                                height: 75,
+                                width: 75,
+                                decoration: BoxDecoration(
+                                    image: DecorationImage(
+                                        image: AssetImage("assets/images/Adidas_logo.png")
+                                    )
+                                ),
                               ),
                             ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.all(12.0),
-                            child: Container(
-                              height: 75,
-                              width: 75,
-                              decoration: BoxDecoration(
-                                  image: DecorationImage(
-                                      image: AssetImage("assets/images/biba-logo.png")
-                                  )
+                            Padding(
+                              padding: const EdgeInsets.all(12.0),
+                              child: Container(
+                                height: 75,
+                                width: 75,
+                                decoration: BoxDecoration(
+                                    image: DecorationImage(
+                                        image: AssetImage("assets/images/loiusV.png")
+                                    )
+                                ),
                               ),
                             ),
-                          ),
-
-
-
-                        ],
-                      ),
-                      Row(
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.all(12.0),
-                            child: Container(
-                              height: 75,
-                              width: 75,
-                              decoration: BoxDecoration(
-                                  image: DecorationImage(
-                                      image: AssetImage("assets/images/biba-logo.png")
-                                  )
+                            Padding(
+                              padding: const EdgeInsets.all(12.0),
+                              child: Container(
+                                height: 75,
+                                width: 75,
+                                decoration: BoxDecoration(
+                                    image: DecorationImage(
+                                        image: AssetImage("assets/images/Nike-Logo.png")
+                                    )
+                                ),
                               ),
                             ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.all(12.0),
-                            child: Container(
-                              height: 75,
-                              width: 75,
-                              decoration: BoxDecoration(
-                                  image: DecorationImage(
-                                      image: AssetImage("assets/images/biba-logo.png")
-                                  )
+
+
+
+                          ],
+                        ),
+                        Row(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.all(12.0),
+                              child: Container(
+                                height: 75,
+                                width: 75,
+                                decoration: BoxDecoration(
+                                    image: DecorationImage(
+                                        image: AssetImage("assets/images/Puma-Logo.png")
+                                    )
+                                ),
                               ),
                             ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.all(12.0),
-                            child: Container(
-                              height: 75,
-                              width: 75,
-                              decoration: BoxDecoration(
-                                  image: DecorationImage(
-                                      image: AssetImage("assets/images/biba-logo.png")
-                                  )
+                            Padding(
+                              padding: const EdgeInsets.all(12.0),
+                              child: Container(
+                                height: 75,
+                                width: 75,
+                                decoration: BoxDecoration(
+                                    image: DecorationImage(
+                                        image: AssetImage("assets/images/prada.png")
+                                    )
+                                ),
                               ),
                             ),
-                          ),
-
-
-
-                        ],
-                      ),
-                      Row(
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.all(12.0),
-                            child: Container(
-                              height: 75,
-                              width: 75,
-                              decoration: BoxDecoration(
-                                  image: DecorationImage(
-                                      image: AssetImage("assets/images/biba-logo.png")
-                                  )
+                            Padding(
+                              padding: const EdgeInsets.all(12.0),
+                              child: Container(
+                                height: 75,
+                                width: 75,
+                                decoration: BoxDecoration(
+                                    image: DecorationImage(
+                                        image: AssetImage("assets/images/versace.png")
+                                    )
+                                ),
                               ),
                             ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.all(12.0),
-                            child: Container(
-                              height: 75,
-                              width: 75,
-                              decoration: BoxDecoration(
-                                  image: DecorationImage(
-                                      image: AssetImage("assets/images/biba-logo.png")
-                                  )
+
+
+
+                          ],
+                        ),
+                        Row(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.all(12.0),
+                              child: Container(
+                                height: 75,
+                                width: 75,
+                                decoration: BoxDecoration(
+                                    image: DecorationImage(
+                                        image: AssetImage("assets/images/peter-england-logo.png")
+                                    )
+                                ),
                               ),
                             ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.all(12.0),
-                            child: Container(
-                              height: 75,
-                              width: 75,
-                              decoration: BoxDecoration(
-                                  image: DecorationImage(
-                                      image: AssetImage("assets/images/biba-logo.png")
-                                  )
+                            Padding(
+                              padding: const EdgeInsets.all(12.0),
+                              child: Container(
+                                height: 75,
+                                width: 75,
+                                decoration: BoxDecoration(
+                                    image: DecorationImage(
+                                        image: AssetImage("assets/images/zara.png")
+                                    )
+                                ),
                               ),
                             ),
-                          ),
+                            Padding(
+                              padding: const EdgeInsets.all(12.0),
+                              child: Container(
+                                height: 75,
+                                width: 75,
+                                decoration: BoxDecoration(
+                                    image: DecorationImage(
+                                        image: AssetImage("assets/images/biba-logo.png")
+                                    )
+                                ),
+                              ),
+                            ),
 
 
 
-                        ],
-                      ),
+                          ],
+                        ),
 
 
 
 
 
-                    ],
+                      ],
+                    ),
                   ),
                 ),
               ),
