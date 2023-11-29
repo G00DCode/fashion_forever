@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class UiHelper{
-  CustomTextField(double radius,String text){
+  CustomTextField(double radius,String text, TextEditingController controller){
     return Padding(
       padding: const EdgeInsets.all(12.0),
       child: TextField(
+        controller: controller,
         decoration: InputDecoration(
           fillColor: Colors.white70,
           hintText: text,

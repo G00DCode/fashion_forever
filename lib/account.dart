@@ -1,5 +1,8 @@
+import 'package:fashion_forever/login_page.dart';
+import 'package:fashion_forever/splash_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class AccountScreen extends StatefulWidget{
   @override
@@ -197,6 +200,13 @@ class _AccountScreenState extends State<AccountScreen> {
                     ),
                   ),
             ),
+            SizedBox(height: 30,),
+            ElevatedButton(onPressed: ()async{
+              var sharedPrefs =await SharedPreferences.getInstance();
+              sharedPrefs.setBool(SplassScreenState.KEYLOGIN,false);
+              Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>LoginPage()));
+
+            }, child: Text("Logout"))
             ],
         ),
       ),

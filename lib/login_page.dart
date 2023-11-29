@@ -1,4 +1,5 @@
 import 'package:fashion_forever/home.dart';
+import 'package:fashion_forever/sign_up.dart';
 import 'package:fashion_forever/splash_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -10,6 +11,10 @@ class LoginPage extends StatefulWidget{
 }
 
 class _LoginPageState extends State<LoginPage> {
+ var requiredText ='';
+
+  TextEditingController emailLoginController =TextEditingController();
+  TextEditingController passwordLoginController =TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -54,6 +59,7 @@ class _LoginPageState extends State<LoginPage> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       TextField(
+                        controller: emailLoginController,
                         decoration: InputDecoration(
                             suffixIcon: Icon(Icons.check, color: Colors.grey,),
                             label: Text("Email", style: TextStyle(
@@ -63,6 +69,7 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                       ),
                       TextField(
+                        controller: passwordLoginController,
                         obscureText: true,
                         decoration: InputDecoration(
                             suffixIcon: Icon(Icons.visibility_off, color: Colors.grey,),
@@ -104,13 +111,42 @@ class _LoginPageState extends State<LoginPage> {
                               color: Colors.white
                           ),),),
                         ),
-                        onTap: ()async{
-                          var sharedPref =await SharedPreferences.getInstance();
-                          sharedPref.setBool(SplassScreenState.KEYLOGIN, true);
+                        onTap: () async {
+                          if (emailLoginController.text.isNotEmpty &&
+                              passwordLoginController.text.isNotEmpty) {
+                            // Get values from SharedPreferences
+                            var sharedEmail = await SharedPreferences.getInstance();
+                            var getEmail = sharedEmail.getString(SignUpPageState.KEYEMAIL);
 
-                          Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>HomeScreen()));
+                            var sharedPassword = await SharedPreferences.getInstance();
+                            var getPassword = sharedPassword.getString(SignUpPageState.KEYPASS);
+
+                            // Your login logic using getEmail and getPassword
+                            if (emailLoginController.text == getEmail &&
+                                passwordLoginController.text == getPassword) {
+                              // Successful login
+                              print("Login successful!");
+                              var sharedPref = await SharedPreferences.getInstance();
+                              sharedPref.setBool(SplassScreenState.KEYLOGIN, true);
+                              Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>HomeScreen()));
+
+                            }
+                            else {
+                              // Incorrect email or password
+                              setState(() {
+                                requiredText = "Incorrect email or password";
+                              });
+
+                            }
+                          } else {
+                            setState(() {
+                              requiredText = "Please Enter Required Fields";
+                            });
+                          }
                         },
                       ),
+                      SizedBox(height: 10,),
+                      Text(requiredText),
                       SizedBox(
                         height: 50,
                       ),
@@ -122,14 +158,18 @@ class _LoginPageState extends State<LoginPage> {
                                 color: Colors.pink,
                                 fontSize: 15
                             ),),
-                            Text("Sign Up",
+                            TextButton(
+                              onPressed: (){
+                                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> SignUpPage()));
+                              },
+                              child: Text("Sign Up",
                               style: TextStyle(
                                 fontSize: 20,
                                 fontWeight: FontWeight.bold,
                                 color: Colors.purple,
                               ),),
 
-                          ],
+                            ),],
                         ),
                       )],
                   ),
