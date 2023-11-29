@@ -399,5 +399,50 @@ class UiHelper{
 
     );
   }
+  CustomSponsoredShow(String ItemName, String Price, String Rating,VoidCallback voidCallback, String image){
+    return                     Expanded(
+      flex: 1,
+      child: InkWell(
+        child:  Column(
+          children: [
+            Stack(
+              children:[ Container(
+
+                height: 200,
+                decoration: BoxDecoration(
+                  color: Colors.white70,
+                  borderRadius: BorderRadius.circular(10),
+                  image: DecorationImage(
+                    image: AssetImage(image),
+                    fit: BoxFit.fill,
+
+                  ),
+                ),
+              ),
+                Positioned(
+                  height: 200,
+                  child: Column(
+                    children: [
+                      Text(ItemName, style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white),),
+                      Text(Price, style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white)),
+                      Text(Rating, style: TextStyle( color: Colors.white)),
+
+                    ],
+                  ),
+                ),
+
+
+              ],),
+          ],
+        ),
+
+        onTap: (){
+          voidCallback();
+        },
+      ),
+    );
+
+
+  }
 
 }
